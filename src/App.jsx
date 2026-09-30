@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
+
 import StatCard from "./components/StatCard";
 import RiskChart from "./components/RiskChart";
 import RiskDistribution from "./components/RiskDistribution";
@@ -18,15 +19,23 @@ import Settings from "./components/Settings";
 function Dashboard() {
 
   return (
-    <main className="flex-1 p-8">
 
-      <h1 className="text-3xl font-bold text-white">
-        Dashboard
-      </h1>
+    <main className="flex-1 p-8 bg-slate-900">
 
-      <p className="text-slate-400 mt-2 mb-8">
-        AI-Powered Bitcoin Transaction Analysis
-      </p>
+      {/* Header */}
+
+      <div className="mb-8">
+
+        <h1 className="text-3xl font-bold text-white">
+          Dashboard
+        </h1>
+
+        <p className="text-slate-400 mt-2">
+          AI-Powered Bitcoin Transaction Analysis
+        </p>
+
+      </div>
+
 
       {/* Statistics */}
 
@@ -64,7 +73,9 @@ function Dashboard() {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-6">
 
         <div className="xl:col-span-2">
+
           <RiskChart />
+
         </div>
 
         <RiskDistribution />
@@ -75,15 +86,18 @@ function Dashboard() {
       {/* Alerts */}
 
       <div className="mt-6">
+
         <RecentAlerts />
+
       </div>
 
 
-      {/* Transactions */}
+      {/* Recent Transactions */}
 
       <RecentTransactions />
 
     </main>
+
   );
 }
 
@@ -91,6 +105,7 @@ function Dashboard() {
 function App() {
 
   return (
+
     <BrowserRouter>
 
       <div className="min-h-screen bg-slate-900 flex">
@@ -159,6 +174,7 @@ function App() {
       </div>
 
     </BrowserRouter>
+
   );
 }
 
